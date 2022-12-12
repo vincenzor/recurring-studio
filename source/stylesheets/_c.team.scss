@@ -1,0 +1,86 @@
+/* ====================================
+ * COMPONENTS: TEAM
+ * ================================= */
+
+// Settings
+// ====================================
+
+/* Team block
+ * ================================= */
+
+/**
+ * 1. Compensate left padding of leftmost .ppr-c-team__member
+ */
+
+.pr-c-team {
+  display: flex;
+  flex-wrap: wrap;
+  @include list-reset;
+  margin-left: px-to-rem($pr-grid-gutter * -1); // [1]
+}
+
+/* Member element
+ * ================================= */
+
+/**
+ * 1. Create gutters using padding.
+ */
+
+.pr-c-team__member {
+  flex: 0 0 auto;
+  width: 50%;
+  margin-bottom: px-to-rem($pr-spacing * 4);
+  padding-left: px-to-rem($pr-grid-gutter); // [1]
+  font-size: px-to-rem($pr-font-size-s);
+  line-height: ($pr-line-height-s / $pr-font-size-s);
+  text-align: center;
+
+  @include media-query("s") {
+    width: 33.333333333%;
+  }
+
+  @include media-query("m") {
+    width: 25%;
+  }
+
+  @include media-query("l") {
+    width: 25%;
+
+    img {
+      width: 75%;
+    }
+  }
+}
+
+/* Member portrait element
+ * ================================= */
+
+.pr-c-team__member-portrait {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: px-to-rem($pr-spacing * 2);
+}
+
+.pr-c-team__member-rounded {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: px-to-rem($pr-spacing * 2);
+}
+
+/* Member name element
+ * ================================= */
+
+.pr-c-team__member-name {
+  display: block;
+  font-weight: $pr-font-weight-bold;
+  color: $pr-color-gray-90;
+}
+
+/* Member title element
+ * ================================= */
+
+.pr-c-team__member-title {
+  display: block;
+  color: $pr-color-gray-30;
+}
